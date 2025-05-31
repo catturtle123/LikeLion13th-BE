@@ -37,9 +37,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Clean and build with Gradle
-        run: |
-          ./gradlew clean build \
-            -x test
+        run: ./
 
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag ${{ env.DOCKER_IMAGE_NAME }}:latest
